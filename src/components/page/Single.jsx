@@ -8,7 +8,7 @@ export const Single = ({ articles }) => {
       <Header />
 
       <Singelblog
-      key={index}
+    
         badge={articles.tag_list}
         title={articles.description}
         date={articles.readable_publish_date}
