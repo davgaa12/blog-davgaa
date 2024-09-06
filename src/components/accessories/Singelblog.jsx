@@ -1,14 +1,9 @@
-import { Ognoo } from "../icons/Ognoo";
-
-export const Singelblog = () => {
+export const Singelblog = ({title, date, img,text}) => {
   return (
     <div>
-      <div className=" pt-[100px] flex  justify-center  ">
+      <div className=" pt-[100px] flex  justify-center pb-20  ">
         <div className="flex flex-col gap-8 ">
-          <div className="w-[800px] text-[36px]">
-            The Impact of Technology on the Workplace: How Technology is
-            Changing
-          </div>
+          <div className="w-[800px] text-[36px]">{title}</div>
           <div className="flex">
             <div className="flex w-[266px]">
               <img
@@ -18,28 +13,17 @@ export const Singelblog = () => {
               />
               <div className="text-[#696A75] text-[14px]">Tracey Wilson</div>
             </div>
-            <div>
-              <Ognoo />
-            </div>
+            <div>{date}</div>
           </div>
 
           <div>
-            <img src="singel.png" alt="" />
+            <img src={img} alt="" />
           </div>
           <div className="w-[800px] text-[#3B3C4A] text-[20px]">
-            Traveling is an enriching experience that opens up new horizons,
-            exposes us to different cultures, and creates memories that last a
-            lifetime. However, traveling can also be stressful and overwhelming,
-            especially if you don't plan and prepare adequately. In this blog
-            article, we'll explore tips and tricks for a memorable journey and
-            how to make the most of your travels.
+            {title}
           </div>
           <div className="w-[800px] text-[#3B3C4A] text-[20px]">
-            One of the most rewarding aspects of traveling is immersing yourself
-            in the local culture and customs. This includes trying local
-            cuisine, attending cultural events and festivals, and interacting
-            with locals. Learning a few phrases in the local language can also
-            go a long way in making connections and showing respect.
+            {text}
           </div>
           <div className="w-[800px] text-[#181A2A] text-[24px]">
             Research Your Destination

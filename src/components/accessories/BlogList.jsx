@@ -1,304 +1,48 @@
-import { Ognoo } from "../icons/Ognoo"
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Blog2 } from "./Blog2";
 
-export const Bloglisting=()=>{
-    return(
-        <div className="flex justify-center">
+export const Bloglisting = ({ articles }) => {
+  const [articless, SetArticles] = useState([]);
+  const fetchData = () => {
+    fetch("https://dev.to/api/articles?per_page=15")
+      .then((response) => response.json())
+      .then((data) => SetArticles(data));
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+  return (
+    <div className="flex justify-center ">
+      <div className="flex flex-col">
         <div className="pt-[100px] ">
           <div className=" flex flex-col gap-[32px]">
             <div className="text-[24px]">All Blog Post</div>
           </div>
-          <div className="flex flex-col gap-5 ">
-            <div className="flex gap-5">
-              <div className="w-[392px] h-[476px] rounded border-[#E8E8EA] shadow pt-4 pl-4">
-                <div>
-                  <img
-                    className="w-[360px] h-[240px] rounded-md"
-                    src="photo1.png"
-                    alt=""
+
+          <div className="grid grid-cols-3 grid-rows-5 gap-4 justify-center items-center ">
+            {articless.map((cards, index) => {
+              return (
+                <Link href={`/blogpost/${cards.id}`}>
+                  <Blog2
+                    key={index}
+                    badge={cards.tag_list[0]}
+                    title={cards.description}
+                    date={cards.readable_publish_date}
+                    url={cards.cover_image}
                   />
-                </div>
-                <div className="flex flex-col gap-5 pt-5">
-                  <div>
-                    <div className="w-[97px] h-[28px] bg-[#4B6BFB0D] text-[#4B6BFB] flex justify-center items-center rounded">
-                      Technology
-                    </div>
-                    <div className="w-[330px] text-[24px]">
-                      The Impact of Technology on the Workplace: How Technology
-                      is Changing
-                    </div>
-                  </div>
-                  <div>
-                    <Ognoo />
-                  </div>
-                </div>
-              </div>
-              <div className="w-[392px] h-[476px] rounded border-[#E8E8EA] shadow pt-4 pl-4">
-                <div>
-                  <img
-                    className="w-[360px] h-[240px] rounded-md"
-                    src="photo2.png"
-                    alt=""
-                  />
-                </div>
-                <div className="flex flex-col gap-5 pt-5">
-                  <div>
-                    <div className="w-[97px] h-[28px] bg-[#4B6BFB0D] text-[#4B6BFB] flex justify-center items-center rounded">
-                      Technology
-                    </div>
-                    <div className="w-[330px] text-[24px]">
-                      The Impact of Technology on the Workplace: How Technology
-                      is Changing
-                    </div>
-                  </div>
-                  <div>
-                    <Ognoo />
-                  </div>
-                </div>
-              </div>
-              <div className="w-[392px] h-[476px] rounded border-[#E8E8EA] shadow pt-4 pl-4">
-                <div>
-                  <img
-                    className="w-[360px] h-[240px] rounded-md"
-                    src="photo3.png"
-                    alt=""
-                  />
-                </div>
-                <div className="flex flex-col gap-5 pt-5">
-                  <div>
-                    <div className="w-[97px] h-[28px] bg-[#4B6BFB0D] text-[#4B6BFB] flex justify-center items-center rounded">
-                      Technology
-                    </div>
-                    <div className="w-[330px] text-[24px]">
-                      The Impact of Technology on the Workplace: How Technology
-                      is Changing
-                    </div>
-                  </div>
-                  <div>
-                    <Ognoo />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-5">
-              <div className="w-[392px] h-[476px] rounded border-[#E8E8EA] shadow pt-4 pl-4">
-                <div>
-                  <img
-                    className="w-[360px] h-[240px] rounded-md"
-                    src="photo4.png"
-                    alt=""
-                  />
-                </div>
-                <div className="flex flex-col gap-5 pt-5">
-                  <div>
-                    <div className="w-[97px] h-[28px] bg-[#4B6BFB0D] text-[#4B6BFB] flex justify-center items-center rounded">
-                      Technology
-                    </div>
-                    <div className="w-[330px] text-[24px]">
-                      The Impact of Technology on the Workplace: How Technology
-                      is Changing
-                    </div>
-                  </div>
-                  <div>
-                    <Ognoo />
-                  </div>
-                </div>
-              </div>
-              <div className="w-[392px] h-[476px] rounded border-[#E8E8EA] shadow pt-4 pl-4">
-                <div>
-                  <img
-                    className="w-[360px] h-[240px] rounded-md"
-                    src="photo5.png"
-                    alt=""
-                  />
-                </div>
-                <div className="flex flex-col gap-5 pt-5">
-                  <div>
-                    <div className="w-[97px] h-[28px] bg-[#4B6BFB0D] text-[#4B6BFB] flex justify-center items-center rounded">
-                      Technology
-                    </div>
-                    <div className="w-[330px] text-[24px]">
-                      The Impact of Technology on the Workplace: How Technology
-                      is Changing
-                    </div>
-                  </div>
-                  <div>
-                    <Ognoo />
-                  </div>
-                </div>
-              </div>
-              <div className="w-[392px] h-[476px] rounded border-[#E8E8EA] shadow pt-4 pl-4">
-                <div>
-                  <img
-                    className="w-[360px] h-[240px] rounded-md"
-                    src="photo6.png"
-                    alt=""
-                  />
-                </div>
-                <div className="flex flex-col gap-5 pt-5">
-                  <div>
-                    <div className="w-[97px] h-[28px] bg-[#4B6BFB0D] text-[#4B6BFB] flex justify-center items-center rounded">
-                      Technology
-                    </div>
-                    <div className="w-[330px] text-[24px]">
-                      The Impact of Technology on the Workplace: How Technology
-                      is Changing
-                    </div>
-                  </div>
-                  <div>
-                    <Ognoo />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-5">
-              <div className="w-[392px] h-[476px] rounded border-[#E8E8EA] shadow pt-4 pl-4">
-                <div>
-                  <img
-                    className="w-[360px] h-[240px] rounded-md"
-                    src="photo7.png"
-                    alt=""
-                  />
-                </div>
-                <div className="flex flex-col gap-5 pt-5">
-                  <div>
-                    <div className="w-[97px] h-[28px] bg-[#4B6BFB0D] text-[#4B6BFB] flex justify-center items-center rounded">
-                      Technology
-                    </div>
-                    <div className="w-[330px] text-[24px]">
-                      The Impact of Technology on the Workplace: How Technology
-                      is Changing
-                    </div>
-                  </div>
-                  <div>
-                    <Ognoo />
-                  </div>
-                </div>
-              </div>
-              <div className="w-[392px] h-[476px] rounded border-[#E8E8EA] shadow pt-4 pl-4">
-                <div>
-                  <img
-                    className="w-[360px] h-[240px] rounded-md"
-                    src="photo4.png"
-                    alt=""
-                  />
-                </div>
-                <div className="flex flex-col gap-5 pt-5">
-                  <div>
-                    <div className="w-[97px] h-[28px] bg-[#4B6BFB0D] text-[#4B6BFB] flex justify-center items-center rounded">
-                      Technology
-                    </div>
-                    <div className="w-[330px] text-[24px]">
-                      The Impact of Technology on the Workplace: How Technology
-                      is Changing
-                    </div>
-                  </div>
-                  <div>
-                    <Ognoo />
-                  </div>
-                </div>
-              </div>
-              <div className="w-[392px] h-[476px] rounded border-[#E8E8EA] shadow pt-4 pl-4">
-                <div>
-                  <img
-                    className="w-[360px] h-[240px] rounded-md"
-                    src="photo1.png"
-                    alt=""
-                  />
-                </div>
-                <div className="flex flex-col gap-5 pt-5">
-                  <div>
-                    <div className="w-[97px] h-[28px] bg-[#4B6BFB0D] text-[#4B6BFB] flex justify-center items-center rounded">
-                      Technology
-                    </div>
-                    <div className="w-[330px] text-[24px]">
-                      The Impact of Technology on the Workplace: How Technology
-                      is Changing
-                    </div>
-                  </div>
-                  <div>
-                    <Ognoo />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-5">
-              <div className="w-[392px] h-[476px] rounded border-[#E8E8EA] shadow pt-4 pl-4">
-                <div>
-                  <img
-                    className="w-[360px] h-[240px] rounded-md"
-                    src="photo7.png"
-                    alt=""
-                  />
-                </div>
-                <div className="flex flex-col gap-5 pt-5">
-                  <div>
-                    <div className="w-[97px] h-[28px] bg-[#4B6BFB0D] text-[#4B6BFB] flex justify-center items-center rounded">
-                      Technology
-                    </div>
-                    <div className="w-[330px] text-[24px]">
-                      The Impact of Technology on the Workplace: How Technology
-                      is Changing
-                    </div>
-                  </div>
-                  <div>
-                    <Ognoo />
-                  </div>
-                </div>
-              </div>
-              <div className="w-[392px] h-[476px] rounded border-[#E8E8EA] shadow pt-4 pl-4">
-                <div>
-                  <img
-                    className="w-[360px] h-[240px] rounded-md"
-                    src="photo4.png"
-                    alt=""
-                  />
-                </div>
-                <div className="flex flex-col gap-5 pt-5">
-                  <div>
-                    <div className="w-[97px] h-[28px] bg-[#4B6BFB0D] text-[#4B6BFB] flex justify-center items-center rounded">
-                      Technology
-                    </div>
-                    <div className="w-[330px] text-[24px]">
-                      The Impact of Technology on the Workplace: How Technology
-                      is Changing
-                    </div>
-                  </div>
-                  <div>
-                    <Ognoo />
-                  </div>
-                </div>
-              </div>
-              <div className="w-[392px] h-[476px] rounded border-[#E8E8EA] shadow pt-4 pl-4">
-                <div>
-                  <img
-                    className="w-[360px] h-[240px] rounded-md"
-                    src="photo1.png"
-                    alt=""
-                  />
-                </div>
-                <div className="flex flex-col gap-5 pt-5">
-                  <div>
-                    <div className="w-[97px] h-[28px] bg-[#4B6BFB0D] text-[#4B6BFB] flex justify-center items-center rounded">
-                      Technology
-                    </div>
-                    <div className="w-[330px] text-[24px]">
-                      The Impact of Technology on the Workplace: How Technology
-                      is Changing
-                    </div>
-                  </div>
-                  <div>
-                    <Ognoo />
-                  </div>
-                </div>
-              </div>
-            </div>
+                </Link>
+              );
+            })}
           </div>
-          <div className="flex justify-center pb-20 pt-10">
-            <div className="w-[123px] h-[48px] bg-[#696A754D] rounded-md items-center flex justify-center ">
-              Load More
-            </div>
+        </div>
+
+        <div className="flex justify-center pb-20 pt-10">
+          <div className="w-[123px] h-[48px] bg-[#696A754D] rounded-md items-center flex justify-center ">
+            Load More
           </div>
         </div>
       </div>
-    )
-}
+    </div>
+  );
+};

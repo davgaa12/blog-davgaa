@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const Header = () => {
   return (
-    <div className=" bg-white flex  justify-center pt-[32px]  pr-[300px] pb-[32px] pl-[300px]">
+    <div className=" flex  justify-center pt-[32px]  pr-[300px] pb-[32px] pl-[300px]">
       <div className="w-[1216px] h-[36px] flex gap-[118px]">
         <div>
           <Link href={"/home"} className="text-[#3B3C4A]">

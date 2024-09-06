@@ -4,11 +4,11 @@ import { Ig } from "../icons/Ig";
 import { In } from "../icons/In";
 import { Tewi } from "../icons/Tewi";
 import { Zuraas } from "../icons/Zuraas";
-
+import Link from "next/link";
 export const Footer = () => {
   return (
     <div>
-      <div className="w-auto h-auto bg-[#E8E8EA]">
+      <div className="w-auto h-auto bg-[#E8E8EA] ">
         <div className=" flex justify-center ">
           <div className="flex w-[1215px] gap-5 pt-20 pb-10">
             <div className="flex flex-col gap-6">
@@ -28,8 +28,14 @@ export const Footer = () => {
               </div>
             </div>
             <div className="w-[512px] flex justify-center">
-              <div className="w-[48px] text-[#3B3C4A] text-[16px]">
-                Home Blog Contact
+              <div className="w-[48px] text-[#3B3C4A] text-[16px] flex flex-col">
+                <Link href={"home"}>Home</Link>
+                <Link href={"/blogpost"} className="text-[#3B3C4A]">
+                  Blog
+                </Link>
+                <Link href={"/contoct"} className="text-[#3B3C4A]">
+                  Contact
+                </Link>
               </div>
             </div>
             <div className="flex gap-5">

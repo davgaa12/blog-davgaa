@@ -2,11 +2,19 @@ import { Footer } from "../accessories/Footer";
 import { Header } from "../accessories/header";
 import { Singelblog } from "../accessories/Singelblog";
 
-export const Single = () => {
+export const Single = ({ articles }) => {
   return (
     <div>
       <Header />
-      <Singelblog />
+
+      <Singelblog
+      key={index}
+        badge={articles.tag_list}
+        title={articles.description}
+        date={articles.readable_publish_date}
+        img={articles.cover_image}
+      />
+
       <Footer />
     </div>
   );

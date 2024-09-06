@@ -4,7 +4,7 @@ import { Header } from "../accessories/Header";
 
 export default function A404Page() {
   return (
-    <div>
+    <div className="max-h-screen">
       <Header />
       <A404Ppage />
       <Footer />
