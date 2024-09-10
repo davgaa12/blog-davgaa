@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Blog2 } from "./Blog2";
 
-export const Bloglisting = ({ articles }) => {
+export const BlogList = ({ articles }) => {
   const [articless, SetArticles] = useState([]);
   const fetchData = () => {
     fetch("https://dev.to/api/articles?per_page=15")
@@ -23,7 +23,7 @@ export const Bloglisting = ({ articles }) => {
           <div className="grid grid-cols-3 grid-rows-5 gap-4 justify-center items-center ">
             {articless.map((cards, index) => {
               return (
-                <Link href={`/blogpost/${cards.id}`}>
+                <Link href={`/blog-post/${cards.id}`}>
                   <Blog2
                     key={index}
                     badge={cards.tag_list[0]}

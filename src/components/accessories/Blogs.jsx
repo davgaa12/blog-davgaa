@@ -28,7 +28,7 @@ export const Blogs = ({ articles }) => {
               <div className="text-[#495057] text-[12px]">Branding</div>
             </div>
             <Link
-              href={"/blogpost"}
+              href={"/blog-post"}
               className="text-[#495057] text-[12px] pl-[830px]"
             >
               View all
@@ -38,7 +38,7 @@ export const Blogs = ({ articles }) => {
         <div className="grid grid-cols-3 grid-rows-3 gap-4 justify-center items-center ">
           {articles.map((cardt, index) => {
             return (
-              <Link href={`/blogpost/${cardt.id}`}>
+              <Link href={`/blog-post/${cardt.id}`}>
                 <Blog
                   key={index}
                   badge={cardt.tag_list[0]}

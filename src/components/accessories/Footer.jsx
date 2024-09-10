@@ -29,8 +29,8 @@ export const Footer = () => {
             </div>
             <div className="w-[512px] flex justify-center">
               <div className="w-[48px] text-[#3B3C4A] text-[16px] flex flex-col">
-                <Link href={"home"}>Home</Link>
-                <Link href={"/blogpost"} className="text-[#3B3C4A]">
+                <Link href={"/"}>Home</Link>
+                <Link href={"/blog-post"} className="text-[#3B3C4A]">
                   Blog
                 </Link>
                 <Link href={"/contoct"} className="text-[#3B3C4A]">

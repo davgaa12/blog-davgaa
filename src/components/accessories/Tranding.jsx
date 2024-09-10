@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Tran } from "./Tran";
-
+import Link from "next/link";
 export const Tranding = (articless) => {
   const [articles, SetArticles] = useState([]);
   const fetchData = () => {
@@ -17,13 +17,13 @@ export const Tranding = (articless) => {
         <div className="pt-[100px]">
           <div className="text-[24px] pb-10">Trending</div>
           <div className="flex gap-5">
-            {articles.map((card, index) => {
+            {articles.map((cardss, index) => {
               return (
                 <Tran
                   key={index}
-                  tag={card?.tag_list[0]}
-                  tag2={card?.description}
-                  url={card?.cover_image}
+                  tag={cardss.tag_list[0]}
+                  tag2={cardss.description}
+                  url={cardss.cover_image}
                 />
               );
             })}

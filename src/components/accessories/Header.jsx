@@ -6,13 +6,13 @@ export const Header = () => {
     <div className=" flex  justify-center pt-[32px]  pr-[300px] pb-[32px] pl-[300px]">
       <div className="w-[1216px] h-[36px] flex gap-[118px]">
         <div>
-          <Link href={"/home"} className="text-[#3B3C4A]">
+          <Link href={"/"} className="text-[#3B3C4A]">
             <Mateblog />
           </Link>
         </div>
         <div className="flex gap-10 Width w-[667px] h-[24px] justify-center">
-          <Link href={"home"}>Home</Link>
-          <Link href={"/blogpost"} className="text-[#3B3C4A]">
+          <Link href={"/"}>Home</Link>
+          <Link href={"/blog-post"} className="text-[#3B3C4A]">
             Blog
           </Link>
           <Link href={"/contoct"} className="text-[#3B3C4A]">
