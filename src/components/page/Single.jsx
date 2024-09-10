@@ -1,5 +1,5 @@
-import { Footer } from "../accessories/Footer";
-import { Header } from "../accessories/header";
+import { Footer } from "../layout/Footer";
+import { Header } from "../layout/Header";
 import { Singelblog } from "../accessories/Singelblog";
 
 export const Single = ({ articles }) => {
@@ -8,7 +8,6 @@ export const Single = ({ articles }) => {
       <Header />
 
       <Singelblog
-    
         badge={articles.tag_list}
         title={articles.description}
         date={articles.readable_publish_date}

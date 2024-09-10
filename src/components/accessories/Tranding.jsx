@@ -19,12 +19,14 @@ export const Tranding = (articless) => {
           <div className="flex gap-5">
             {articles.map((cardss, index) => {
               return (
-                <Tran
-                  key={index}
-                  tag={cardss.tag_list[0]}
-                  tag2={cardss.description}
-                  url={cardss.cover_image}
-                />
+                <Link href={`/blog-post/${cardss.id}`}>
+                  <Tran
+                    key={index}
+                    tag={cardss.tag_list[0]}
+                    tag2={cardss.description}
+                    url={cardss.cover_image}
+                  />
+                </Link>
               );
             })}
           </div>

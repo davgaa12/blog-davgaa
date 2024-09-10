@@ -1,22 +1,42 @@
 import { useEffect, useState } from "react";
-
+import Link from "next/link";
 import { Cros } from "./Cros";
 
 export const Corss = () => {
-  const [articles, SetArticles] = useState([]);
+  const [articless, setArticles] = useState([]);
+  const [page, setPage] = useState(1);
   const fetchData = () => {
-    fetch("https://dev.to/api/articles?per_page=1&&top=1")
+    fetch(`https://dev.to/api/articles?per_page=1&page=${page}`)
       .then((response) => response.json())
-      .then((data) => SetArticles(data));
+      .then((data) => {
+        setArticles(data);
+      });
+  };
+  const handleBackBtn = () => {
+    setPage((prevPage) => prevPage - 1);
+  };
+  const handleFowardBtn = () => {
+    setPage((prevPage) => prevPage + 1);
   };
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [page]);
+
   return (
     <div>
-      {articles.map((card, index) => {
-        return <Cros key={index} url1={card?.cover_image} />;
+      {articless.map((article, index1) => {
+        return (
+          <Cros
+            key={index1}
+            badge={article.title}
+            description={article.description}
+            handleBackBtn={handleBackBtn}
+            handleFowardBtn={handleFowardBtn}
+            url1={article?.cover_image}
+          />
+        );
       })}
+      ;
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { A404Ppage } from "../accessories/A404Ppage";
-import { Footer } from "../accessories/Footer";
-import { Header } from "../accessories/Header";
+import { Footer } from "../layout/Footer";
+import { Header } from "../layout/Header";
 
 export default function A404Page() {
   return (

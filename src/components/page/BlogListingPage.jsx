@@ -1,6 +1,6 @@
 import { BlogList } from "../accessories/BlogList";
-import { Footer } from "../accessories/Footer";
-import { Header } from "../accessories/header";
+import { Footer } from "../layout/Footer";
+import { Header } from "../layout/Header";
 
 export default function BloglistingPage() {
   return (

@@ -1,10 +1,42 @@
+import { useEffect, useState } from "react";
 import { Line1 } from "../icons/Line1";
 import { Line2 } from "../icons/Line2";
 import { Ognoo } from "../icons/Ognoo";
 
-export const Cros = ({ url1 }) => {
+export const Cros = ({
+  badge,
+  description,
+  handleBackBtn,
+  handleFowardBtn,
+  url1,
+}) => {
+  // const [articles, setArticles] = useState([]);
+  // const [page, setPage] = useState(1);
+  // const fetchData = () => {
+  //   fetch(`4https://dev.to/api/articles?per_page=1&page=${page}`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setArticles(data);
+  //     });
+  // };
+  // const handleBackBtn = () => {
+  //   setPage((prevPage) => prevPage - 1);
+  // };
+  // const handleFowardBtn = () => {
+  //   setPage((prevPage) => prevPage + 1);
+  // };
+  // useEffect(() => {
+  //   fetchData();
+  // }, [page]);
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     handleFowardBtn();
+  //   }, [page]);
+  //   return () => clearInterval(interval);
+  // }, []);
   return (
-    <div className="  pt-[100px] flex  justify-center ">
+    <div className="pt-[100px] flex justify-center ">
       <div className="flex flex-col">
         <div
           style={{
@@ -19,11 +51,11 @@ export const Cros = ({ url1 }) => {
         >
           <div className="w-[598px] h-[252px] bg-white rounded-md flex flex-col  gap-6 pl-10 pt-10">
             <div>
-              <div className="w-[98px] h-[27px] bg-[#4B6BFB] text-white  flex flex-col rounded items-center">
-                Technology
+              <div className="w-[98px] h-[27px] bg-[#4B6BFB] text-white  flex flex-col rounded items-center ">
+                {badge}
               </div>
-              <div className="text-[36px] w-[350px] h-[80px]">
-                Grid system for better Design User Interface
+              <div className="text-[18px] w-[350px] h-[80px] line-clamp-3">
+                {description}
               </div>
             </div>
             <div>
@@ -32,8 +64,12 @@ export const Cros = ({ url1 }) => {
           </div>
         </div>
         <div className="flex gap-2 pl-[1130px] pt-4">
-          <Line1 />
-          <Line2 />
+          <button className="cursor-pointer" onClick={handleBackBtn}>
+            <Line1 />
+          </button>
+          <button className="cursor-pointer" onClick={handleFowardBtn}>
+            <Line2 />
+          </button>
         </div>
       </div>
     </div>
