@@ -29,11 +29,11 @@ export const Footer = () => {
             </div>
             <div className="w-[512px] flex justify-center">
               <div className="w-[48px] text-[#3B3C4A] text-[16px] flex flex-col">
-                <Link href={"/"}>Home</Link>
-                <Link href={"/blog-post"} className="text-[#3B3C4A]">
+                <Link className=" hover:text-black hover:underline" href={"/"}>Home</Link>
+                <Link href={"/blog-post"} className="text-[#3B3C4A]  hover:text-black hover:underline">
                   Blog
                 </Link>
-                <Link href={"/contoct"} className="text-[#3B3C4A]">
+                <Link href={"/contoct"} className="text-[#3B3C4A]  hover:text-black hover:underline">
                   Contact
                 </Link>
               </div>

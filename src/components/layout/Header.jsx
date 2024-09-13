@@ -11,11 +11,22 @@ export const Header = () => {
           </Link>
         </div>
         <div className="flex gap-10 Width w-[667px] h-[24px] justify-center">
-          <Link href={"/"}>Home</Link>
-          <Link href={"/blog-post"} className="text-[#3B3C4A]">
+          <Link
+            className="hover:text-blue-800 hover:underline font-bold"
+            href={"/"}
+          >
+            Home
+          </Link>
+          <Link
+            className="hover:text-blue-800 hover:underline font-bold"
+            href={"/blog-post"}
+          >
             Blog
           </Link>
-          <Link href={"/contoct"} className="text-[#3B3C4A]">
+          <Link
+            className="hover:text-blue-800 hover:underline font-bold"
+            href={"/contoct"}
+          >
             Contact
           </Link>
         </div>

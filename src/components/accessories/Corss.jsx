@@ -6,7 +6,7 @@ export const Corss = () => {
   const [articless, setArticles] = useState([]);
   const [page, setPage] = useState(1);
   const fetchData = () => {
-    fetch(`https://dev.to/api/articles?per_page=1&page=${page}`)
+    fetch(`https://dev.to/api/articles?per_page=1&&top=1&page=${page}`)
       .then((response) => response.json())
       .then((data) => {
         setArticles(data);

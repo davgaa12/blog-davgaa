@@ -3,7 +3,7 @@ import { Blogs } from "../accessories/Blogs";
 import { Footer } from "../layout/Footer";
 import { Header } from "../layout/Header";
 import { Corss } from "../accessories/Corss";
-import { Tranding, Trann } from "../accessories/Tranding";
+import { Tranding,  } from "../accessories/Tranding";
 
 export const HomePage = () => {
   const [articles, SetArticles] = useState([]);

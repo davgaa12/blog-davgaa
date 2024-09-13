@@ -64,10 +64,10 @@ export const Cros = ({
           </div>
         </div>
         <div className="flex gap-2 pl-[1130px] pt-4">
-          <button className="cursor-pointer" onClick={handleBackBtn}>
+          <button className="cursor-pointer hover:shadow-lg hover:shadow-black rounded-md" onClick={handleBackBtn}>
             <Line1 />
           </button>
-          <button className="cursor-pointer" onClick={handleFowardBtn}>
+          <button className="cursor-pointer  hover:shadow-lg hover:shadow-black rounded-md" onClick={handleFowardBtn}>
             <Line2 />
           </button>
         </div>
